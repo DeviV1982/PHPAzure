@@ -6,6 +6,11 @@
 <body>
 	<h1>MySQL Table Viewer</h1>
 	<?php
+
+		$conn = mysqli_init();
+mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+mysqli_real_connect($conn, 'mydemoserver.mysql.database.azure.com', 'myadmin', 'yourpassword', 'quickstartdb', 3306, MYSQLI_CLIENT_SSL);
+
 		// Define database connection variables
 		$servername = "servergl.mysql.database.azure.com";
 		$username = "deviv";
@@ -14,6 +19,10 @@
 
 		// Create database connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
+
+$conn = mysqli_init();
+mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+mysqli_real_connect($conn, $servername,  $username, $password, $dbname, 3306, MYSQLI_CLIENT_SSL);
 
 		// Check connection
 		if ($conn->connect_error) {
