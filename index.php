@@ -25,7 +25,7 @@
 		// Query database for all rows in the table
 		$sql = "SELECT * FROM mytable";
 		$result = $conn->query($sql);
-
+echo "<table><tr><th>ID</th><th>Name</th><th>Email</th></tr>";
 		if ($result->num_rows > 0) {
 			// Display table headers
 			echo "<table><tr><th>ID</th><th>Name</th><th>Email</th></tr>";
@@ -37,7 +37,7 @@
 		} else {
 			echo "0 results";
 		}
-
+echo "</table>";
 		// Close database connection
 		$conn->close();
 	?>
