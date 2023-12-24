@@ -21,7 +21,7 @@
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-<h1>MySQL Table Viewer1111</h1>
+
 		// Query database for all rows in the table
 		$sql = "SELECT * FROM mytable";
 		$result = $conn->query($sql);
@@ -37,7 +37,7 @@
 		} else {
 			echo "0 results";
 		}
-<h1>MySQL Table Viewer2</h1>
+
 		// Close database connection
 		$conn->close();
 	?>
