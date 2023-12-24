@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html>
 <head>
 	<title>MySQL Table Viewer</title>
@@ -7,10 +7,7 @@
 	<h1>MySQL Table Viewer</h1>
 	<?php
 
-		$conn = mysqli_init();
-mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
-mysqli_real_connect($conn, 'mydemoserver.mysql.database.azure.com', 'myadmin', 'yourpassword', 'quickstartdb', 3306, MYSQLI_CLIENT_SSL);
-
+	
 		// Define database connection variables
 		$servername = "servergl.mysql.database.azure.com";
 		$username = "deviv";
