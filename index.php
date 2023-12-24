@@ -14,17 +14,11 @@
 		$password = "Password1#";
 		$dbname = "mydb";
 
-		// Create database connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-
-$conn = mysqli_init();
-mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
-mysqli_real_connect($conn, $servername,  $username, $password, $dbname, 3306, MYSQLI_CLIENT_SSL);
-
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
+		$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
 
 		// Query database for all rows in the table
 		$sql = "SELECT * FROM employees";
