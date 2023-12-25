@@ -23,7 +23,7 @@
 		}
 
 		// Query database for all rows in the table
-		$sql = "SELECT * FROM mytable";
+		$sql = "SELECT * FROM employees";
 		$result = $conn->query($sql);
 echo "<table><tr><th>ID</th><th>Name</th><th>Email</th></tr>";
 		if ($result->num_rows > 0) {
